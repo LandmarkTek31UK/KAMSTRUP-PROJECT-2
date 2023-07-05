@@ -63,9 +63,21 @@ docker images
 + A Jenkinsfile is used for a pipeline job
 + Jenkins is integrated with Nexus, sonarqube, and necessary plugins installed
 ## Application Discovery and Access
++ To test if the application is running, you can run the following commands
+```bash
+kubectl get all #to see all resources
+kubectl get pv # to get persistent volume
+kubectl get node
+kubectl get pods
+kubectl get ep # to see if the diff apps can communicate with each other
+kubectl get pvc #to get a persistent volume claim
 + The application can be accessed by either running the command
 ```bash
 kubectl get svc
+```
++ You can see how many nodes the application is running on by running the command
+```bash
+nslookup #loadbalancer url
 ```
 + using the service link which is an AWS load balancer OR,
 + Accessing AWS and copying the LB URL.
@@ -74,3 +86,4 @@ kubectl get svc
 ```bash
 ```
 
+## liscence (forchu.cha@gmail.com)
