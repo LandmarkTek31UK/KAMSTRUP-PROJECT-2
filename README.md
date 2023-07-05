@@ -28,11 +28,11 @@
 ## Application Deployment and Hosting
 + The Application is hosted on AWS Cloud
 + The application is built using the Maven software as a defined dependency in the pom.xml file
-  ```bash
-  mvn clean package
-  ```
+```bash
+mvn clean package
+```
 + The application is not tested but JUnit tests can be performed using sonarqube or Jacoco
- ```bash
+```bash
 sonar:sonar
 ```
 + Jar packages are created after build and can be uploaded into an artifactory like nexus
@@ -40,32 +40,13 @@ sonar:sonar
 mvn deploy
 ```
 + The application is deployed using the AWS Elastic Kubernetes Service (EKS) which is a self-managed K8S cluster
-+ The cluster deploys
-
-
-
-# Build Project Using Maven
-
-Maven is java based build tool to generate executable 
-
-packages(jar, ear,war) for java based projects.
-
-```bash
-mvn clean package
-```
-
++ The cluster deploys the loadbalancer, the k8s master and worker nodes, the app and replicas and the data with pv and pvc
 ## Create Docker Image
-Docker is a continerization tool.Using docker we can deploy our applications as 
-
-containes using docker images. Containers contains application code and also the softwares,
-
-config files whatever is required for our application to run.
-
-Create docker image using Dockerfile
-
-
++ A docker image is created with a linux apline base image.
++ the image is created using the Dockerfile
++ The image is pushed into a DockerHub repo
 ```docker
-docker build -t mylandmarktech/springapp .
+docker build -t chafah/springapp .
 ```
 
 ## Deploy Application Using Docker Compose 
