@@ -40,7 +40,7 @@ spec:
   ports:
   - port: 80
     targetPort: 8080
-    nodePort: 30030
+    nodePort: 30033
   type: LoadBalancer
 ---
 apiVersion: v1
