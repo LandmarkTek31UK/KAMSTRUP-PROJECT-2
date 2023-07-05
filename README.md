@@ -40,24 +40,37 @@ sonar:sonar
 mvn deploy
 ```
 + The application is deployed using the AWS Elastic Kubernetes Service (EKS) which is a self-managed K8S cluster
-+ The cluster deploys the loadbalancer, the k8s master and worker nodes, the app and replicas and the data with pv and pvc
++ The cluster deploys the load balancer, the k8s master and worker nodes, the app and replicas, and the data with pv and PVC
+```bash
+kubectl apply -f springapp.yml
+```
 ## Create Docker Image
 + A docker image is created with a linux apline base image.
-+ the image is created using the Dockerfile
++ The image is created using the Dockerfile
 + The image is pushed into a DockerHub repo
 ```docker
 docker build -t chafah/springapp .
 ```
-
-## Deploy Application Using Docker Compose 
-
-```docker-compose 
-docker-compose up -d 
-```
-
 ## List Docker Containers
 ```docker
 docker ps -a
+docker images
 ```
-## License
-[Landmark Technologies](http://www.mylandmarktech.com)
+## Continous Integration and Deployment
++ Jenkins is used as the CI tool
++ It is integrated with Git to pull the app repo and for VC
++ Git webhook can be configured for automated builds
++ A Jenkinsfile is used for a pipeline job
++ Jenkins is integrated with Nexus, sonarqube, and necessary plugins installed
+## Application Discovery and Access
++ The application can be accessed by either running the command
+```bash
+kubectl get svc
+```
++ using the service link which is an AWS load balancer OR,
++ Accessing AWS and copying the LB URL.
++ Using the AWS Route53 service, a DNS record can be created to provide a distributable app URL.
++ The current application url access is......It will run for a day since it is a paid service
+```bash
+```
+
