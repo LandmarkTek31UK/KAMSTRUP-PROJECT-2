@@ -86,4 +86,4 @@ nslookup #loadbalancer url
 ```bash
 ```
 
-## liscence (forchu.cha@gmail.com)
+## Liscence (forchu.cha@gmail.com)
