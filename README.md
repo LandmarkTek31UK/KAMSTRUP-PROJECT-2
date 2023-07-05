@@ -84,6 +84,7 @@ nslookup #loadbalancer url
 + Using the AWS Route53 service, a DNS record can be created to provide a distributable app URL.
 + The current application url access is......It will run for a day since it is a paid service
 ```bash
+http://a87bda1dcc7be4927a70e31a3dcfcae7-1517117890.us-east-2.elb.amazonaws.com/
 ```
 
 ## Liscence (forchu.cha@gmail.com)
