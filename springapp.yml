@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: springappcontainer
-        image: chafah/spring-boot-mongo:v1
+        image: chafah/spring-boot-mongo:v2
         ports:
         - containerPort: 8080
         env:
