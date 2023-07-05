@@ -71,6 +71,7 @@ kubectl get node
 kubectl get pods
 kubectl get ep # to see if the diff apps can communicate with each other
 kubectl get pvc #to get a persistent volume claim
+```
 + The application can be accessed by either running the command
 ```bash
 kubectl get svc
