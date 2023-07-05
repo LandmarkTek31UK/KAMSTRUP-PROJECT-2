@@ -23,6 +23,24 @@
 + The database has volume persistency.
 + The db has a ReplicaSet with ensures that if the DB pod is destroyed, it will be automatically recreated with volume persistency
 
+## Application Deployment and Hosting
++ The Application is hosted on AWS Cloud
++ The application is built using the Maven software as a defined dependency in the pom.xml file
+  ```bash
+  mvn clean package
+  ```
++ The application is not tested but JUnit tests can be performed using sonarqube or Jacoco
+ ```bash
+sonar:sonar
+```
++ Jar packages are created after build and can be uploaded into an artifactory like nexus
+```bash
+mvn deploy
+```
++ The application is deployed using the AWS Elastic Kubernetes Service (EKS) which is a self-managed K8S cluster
++ The cluster deploys
+
+
 
 # Build Project Using Maven
 
