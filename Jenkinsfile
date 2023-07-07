@@ -20,7 +20,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t spring-boot-mongo .'
+                sh 'docker build -t chafah/springapp:v7 .'
             }
         }
 
@@ -35,16 +35,11 @@ pipeline {
                 }
             }
         }
-        stage("Deploy to EKS") {
+        stage("Deploy Application") {
             steps {
-                script {
-                    dir('kubernetes') {
                         sh "kubectl apply -f springapp.yaml"
-                    }
                 }
             }
-        }
-    }
 
     environment {
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
