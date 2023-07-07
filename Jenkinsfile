@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('SCM Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/CHAFAH/kamstrup-projectA'
+                git branch: 'main', url: 'https://github.com/CHAFAH/KAMSTRUP-PROJECT.git'
             }
         }
 
