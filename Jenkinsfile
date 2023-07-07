@@ -29,8 +29,7 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
-                        sh 'docker tag spring-boot-mongo:latest chafah/spring-boot-mongo:v1'
-                        sh 'docker push chafah/spring-boot-mongo:v1'
+                        sh 'docker push chafah/springapp:v7'
                     }
                 }
             }
