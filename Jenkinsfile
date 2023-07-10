@@ -35,6 +35,12 @@ pipeline {
             }
         }
 
+        stage('REMOVE DOCKER IMAGE') {
+            steps {
+                sh 'docker rmi &(docker images -q)'
+            }
+        }
+
         stage("Deploy Application") {
             steps {
                 sh "kubectl apply -f springapp.yaml"
