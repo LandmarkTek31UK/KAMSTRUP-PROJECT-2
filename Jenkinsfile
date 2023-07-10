@@ -37,7 +37,7 @@ pipeline {
 
         stage("Deploy Application") {
             steps {
-                sh "kubectl apply -f springapp.yaml"
+                sh "sudo kubectl apply -f springapp.yaml"
             }
         }
     }
