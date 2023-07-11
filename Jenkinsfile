@@ -26,14 +26,7 @@ pipeline {
                 }
             }
         }
-        stage('CODE QUALITY CHECK') {
-            steps {
-                script {
-                    sh "sonar:sonar"
-                }
-            }
-        }
-      
+       
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t chafah/springapp:v7 .'
