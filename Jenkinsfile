@@ -31,7 +31,7 @@ pipeline {
                 script {
                     def mavenHome = tool name: "Maven-3.9.3", type: "maven"
                     def mavenCMD = "${mavenHome}/bin/mvn"
-                    sh "${mavenCMD} sonar:sonar"
+                    sh "${mavenCMD} sonar"
                 }
             }
         }
