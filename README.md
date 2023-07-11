@@ -1,5 +1,5 @@
 # SpringBoot App with MongoDB and LB
-+ Prince Chafah Forchu Sani # Kamstrup 3tier app demo Task
++ Prince Chafah Forchu Sani # Kamstrup 3tier App demo Task
 + forchu.cha@gmail.com   # +4571573047
 ## Application Architecture
 + The application has a basic 3tier architecture
