@@ -28,33 +28,38 @@
 ## Application Deployment and Hosting
 + The Application is hosted on AWS Cloud
 + The application is built using the Maven software as a defined dependency in the pom.xml file
+## MAVEN BUILD
++ Run the command to build deployable packages (war, jar, ear)
 ```bash
 mvn clean package
 ```
-+ The application is not tested but JUnit tests can be performed using sonarqube or Jacoco
+## CODE QUALITY CHECK
++ Copy the command and run to perform a code check using Sonarqube
 ```bash
 sonar:sonar
 ```
-+ Jar packages are created after build and can be uploaded into an artifactory like nexus
+## UPLOAD ARTIFACTORY FOR BACKUP
++ Jar packages are created after build and can be uploaded into an Artifactory like nexus
 ```bash
 mvn deploy
 ```
-+ The application is deployed using the AWS Elastic Kubernetes Service (EKS) which is a self-managed K8S cluster
-+ The cluster deploys the load balancer, the k8s master and worker nodes, the app and replicas, and the data with pv and PVC
-```bash
-kubectl apply -f springapp.yml
-```
-## Create Docker Image
+## BUILD DOCKER IMAGE
 + A docker image is created with a linux apline base image.
 + The image is created using the Dockerfile
 + The image is pushed into a DockerHub repo
 ```docker
 docker build -t chafah/springapp .
 ```
-## List Docker Containers
+## UPLOAD IMAGE TO DOCKERHUB
 ```docker
-docker ps -a
+docker push chafah/springapp:v7
 docker images
+```
+# CLOUD DEPLOYMENT
++ The application is deployed using the AWS Elastic Kubernetes Service (EKS) which is a self-managed K8S cluster
++ The cluster deploys the load balancer, the k8s master and worker nodes, the app and replicas, and the data with pv and PVC
+```bash
+kubectl apply -f springapp.yml
 ```
 ## Continous Integration and Deployment
 + Jenkins is used as the CI tool
