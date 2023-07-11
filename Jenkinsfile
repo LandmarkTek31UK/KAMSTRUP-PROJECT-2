@@ -26,6 +26,11 @@ pipeline {
                 }
             }
         }
+        stage('Code Check') {
+            steps {
+                sh 'mvn sonar:sonar'
+            }
+        }
       
         stage('Build Docker Image') {
             steps {
