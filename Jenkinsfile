@@ -43,7 +43,7 @@ pipeline {
 
         stage("Deploy Application") {
             steps {
-                sh "kubectl create -f springapp.yml"
+                sh "kubectl apply -f springapp.yaml"
             }
         }
     }
