@@ -43,7 +43,7 @@ pipeline {
 
         stage("Deploy Application") {
             steps {
-                sh "kubectl apply -f /home/ec2-user/kamstask/KAMSTRUP-PROJECT/springapp.yaml"
+                sh "kubectl create -f springapp.yaml"
             }
         }
     }
