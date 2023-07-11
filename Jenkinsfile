@@ -17,7 +17,16 @@ pipeline {
                 }
             }
         }
-
+        stage('UPLOAD ARTIFACTS') {
+            steps {
+                script {
+                    def mavenHome = tool name: "Maven-3.9.3", type: "maven"
+                    def mavenCMD = "${mavenHome}/bin/mvn"
+                    sh "${mavenCMD} deploy"
+                }
+            }
+        }
+      
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t chafah/springapp:v7 .'
