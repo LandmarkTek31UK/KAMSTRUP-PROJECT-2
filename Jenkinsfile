@@ -43,7 +43,6 @@ pipeline {
 
         stage("Deploy Application") {
             steps {
-                sh "ssh -i "SANI.pem" ec2-user@ec2-18-117-71-238.us-east-2.compute.amazonaws.com"
                 sh "kubectl apply -f springapp.yaml"
             }
         }
