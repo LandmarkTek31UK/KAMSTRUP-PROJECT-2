@@ -38,7 +38,7 @@ mvn clean package
 ```bash
 sonar:sonar
 ```
-## UPLOAD ARTIFACTORY FOR BACKUP
+## UPLOAD ARTIFACTS FOR BACKUP
 + Jar packages are created after build and can be uploaded into an Artifactory like nexus
 ```bash
 mvn deploy
